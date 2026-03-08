@@ -64,6 +64,9 @@ const AppointmentSection = () => {
         >
           Book Your Appointment
         </motion.h2>
+        <p className="mt-3 text-center text-muted-foreground max-w-md mx-auto">
+          Reach us directly or use the form and we'll get back to you.
+        </p>
 
         <div className="mt-16 grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact info */}
