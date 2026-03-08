@@ -1,6 +1,33 @@
 import { motion } from "framer-motion";
 import { Sparkles, SmilePlus, HeartPulse, ShieldCheck, Syringe, Baby } from "lucide-react";
 
+const neonGradients = [
+  "linear-gradient(135deg, hsl(174 62% 95%), hsl(190 70% 92%))",
+  "linear-gradient(135deg, hsl(200 60% 94%), hsl(220 55% 92%))",
+  "linear-gradient(135deg, hsl(152 50% 94%), hsl(174 45% 92%))",
+  "linear-gradient(135deg, hsl(260 50% 95%), hsl(200 60% 93%))",
+  "linear-gradient(135deg, hsl(174 45% 93%), hsl(152 55% 91%))",
+  "linear-gradient(135deg, hsl(190 60% 93%), hsl(260 40% 94%))",
+];
+
+const neonShadows = [
+  "0 0 20px hsl(174 62% 50% / 0.15), 0 4px 20px hsl(174 62% 40% / 0.10)",
+  "0 0 20px hsl(200 60% 50% / 0.15), 0 4px 20px hsl(200 60% 40% / 0.10)",
+  "0 0 20px hsl(152 50% 50% / 0.15), 0 4px 20px hsl(152 50% 40% / 0.10)",
+  "0 0 20px hsl(260 50% 55% / 0.15), 0 4px 20px hsl(260 50% 45% / 0.10)",
+  "0 0 20px hsl(174 45% 50% / 0.15), 0 4px 20px hsl(174 45% 40% / 0.10)",
+  "0 0 20px hsl(190 60% 50% / 0.15), 0 4px 20px hsl(190 60% 40% / 0.10)",
+];
+
+const neonShadowsHover = [
+  "0 0 35px hsl(174 62% 50% / 0.35), 0 8px 30px hsl(174 62% 40% / 0.20)",
+  "0 0 35px hsl(200 60% 50% / 0.35), 0 8px 30px hsl(200 60% 40% / 0.20)",
+  "0 0 35px hsl(152 50% 50% / 0.35), 0 8px 30px hsl(152 50% 40% / 0.20)",
+  "0 0 35px hsl(260 50% 55% / 0.35), 0 8px 30px hsl(260 50% 45% / 0.20)",
+  "0 0 35px hsl(174 45% 50% / 0.35), 0 8px 30px hsl(174 45% 40% / 0.20)",
+  "0 0 35px hsl(190 60% 50% / 0.35), 0 8px 30px hsl(190 60% 40% / 0.20)",
+];
+
 const services = [
   {
     icon: HeartPulse,
@@ -66,17 +93,16 @@ const ServicesSection = () => {
               whileInView="visible"
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
-              className="group rounded-2xl p-8 transition-all duration-300 bg-white border border-accent/60"
+              className="group rounded-2xl p-8 transition-all duration-300 border border-white/60"
               style={{
-                boxShadow: "0 4px 24px -4px hsl(174 62% 40% / 0.10), 0 1px 3px hsl(174 45% 50% / 0.06)",
+                background: neonGradients[i % neonGradients.length],
+                boxShadow: neonShadows[i % neonShadows.length],
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow =
-                  "0 12px 36px -8px hsl(174 62% 40% / 0.22), 0 2px 8px hsl(174 45% 50% / 0.10)";
+                (e.currentTarget as HTMLElement).style.boxShadow = neonShadowsHover[i % neonShadowsHover.length];
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow =
-                  "0 4px 24px -4px hsl(174 62% 40% / 0.10), 0 1px 3px hsl(174 45% 50% / 0.06)";
+                (e.currentTarget as HTMLElement).style.boxShadow = neonShadows[i % neonShadows.length];
               }}
             >
               <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
