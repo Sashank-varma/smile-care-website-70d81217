@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Sparkles, SmilePlus, HeartPulse } from "lucide-react";
+import { Sparkles, SmilePlus, HeartPulse, ShieldCheck, Syringe, Baby } from "lucide-react";
 
 const services = [
   {
@@ -17,6 +17,21 @@ const services = [
     title: "Cosmetic Dentistry",
     description: "Advanced cosmetic treatments including whitening and veneers.",
   },
+  {
+    icon: Syringe,
+    title: "Root Canal Treatment",
+    description: "Painless root canal therapy to save damaged teeth and relieve discomfort.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Dental Implants",
+    description: "Permanent tooth replacement solutions that look and feel natural.",
+  },
+  {
+    icon: Baby,
+    title: "Pediatric Dentistry",
+    description: "Gentle and friendly dental care designed especially for children.",
+  },
 ];
 
 const cardVariants = {
@@ -24,7 +39,7 @@ const cardVariants = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.15, duration: 0.5, ease: "easeOut" as const },
+    transition: { delay: i * 0.12, duration: 0.5, ease: "easeOut" as const },
   }),
 };
 
@@ -51,15 +66,17 @@ const ServicesSection = () => {
               whileInView="visible"
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
-              className="group rounded-2xl bg-card p-8 transition-shadow duration-300"
+              className="group rounded-2xl p-8 transition-all duration-300 bg-white border border-accent/60"
               style={{
-                boxShadow: "var(--card-shadow)",
+                boxShadow: "0 4px 24px -4px hsl(174 62% 40% / 0.10), 0 1px 3px hsl(174 45% 50% / 0.06)",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow = "var(--card-shadow-hover)";
+                (e.currentTarget as HTMLElement).style.boxShadow =
+                  "0 12px 36px -8px hsl(174 62% 40% / 0.22), 0 2px 8px hsl(174 45% 50% / 0.10)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow = "var(--card-shadow)";
+                (e.currentTarget as HTMLElement).style.boxShadow =
+                  "0 4px 24px -4px hsl(174 62% 40% / 0.10), 0 1px 3px hsl(174 45% 50% / 0.06)";
               }}
             >
               <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
