@@ -108,6 +108,21 @@ const AppointmentSection = () => {
                 </motion.div>
               ))}
             </div>
+
+            {/* Emergency & 24/7 info */}
+            <div className="glass-card rounded-xl p-5 space-y-3">
+              <p className="text-sm font-semibold text-foreground flex items-center gap-2">
+                🚨 In case of emergency, contact us immediately
+              </p>
+              <ArrowDown className="w-4 h-4 text-primary mx-auto animate-bounce" />
+              <a href="tel:7780453994" className="block text-center text-primary font-bold text-lg hover:underline">
+                7780453994
+              </a>
+              <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground pt-1">
+                <Clock className="w-4 h-4 text-primary" />
+                <span>We confirm appointments <strong className="text-foreground">24/7</strong></span>
+              </div>
+            </div>
           </motion.div>
 
           {/* Form */}
