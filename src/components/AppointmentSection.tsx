@@ -88,10 +88,10 @@ const AppointmentSection = () => {
             <h3 className="text-xl font-semibold text-foreground">Contact Details</h3>
             <div className="space-y-5">
               {[
-                { icon: Phone, label: "7780453994", gradient: "linear-gradient(135deg, hsl(174 72% 42%), hsl(190 85% 48%))" },
-                { icon: Mail, label: "projectd431@gmail.com", gradient: "linear-gradient(135deg, hsl(215 75% 55%), hsl(240 55% 62%))" },
-                { icon: MapPin, label: "Vizinagaram", gradient: "linear-gradient(135deg, hsl(155 65% 42%), hsl(174 72% 42%))" },
-              ].map(({ icon: Icon, label, gradient }) => (
+                { icon: Phone, title: "Mobile No", label: "7780453994", gradient: "linear-gradient(135deg, hsl(174 72% 42%), hsl(190 85% 48%))" },
+                { icon: Mail, title: "Mail", label: "projectd431@gmail.com", gradient: "linear-gradient(135deg, hsl(215 75% 55%), hsl(240 55% 62%))" },
+                { icon: MapPin, title: "Location", label: "Vizinagaram", gradient: "linear-gradient(135deg, hsl(155 65% 42%), hsl(174 72% 42%))" },
+              ].map(({ icon: Icon, title, label, gradient }) => (
                 <motion.div
                   key={label}
                   className="flex items-center gap-4 glass-card rounded-xl p-4"
