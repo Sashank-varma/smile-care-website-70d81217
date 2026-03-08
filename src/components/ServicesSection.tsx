@@ -1,6 +1,33 @@
 import { motion } from "framer-motion";
 import { Sparkles, SmilePlus, HeartPulse, ShieldCheck, Syringe, Baby } from "lucide-react";
 
+const neonGradients = [
+  "linear-gradient(135deg, hsl(174 62% 95%), hsl(190 70% 92%))",
+  "linear-gradient(135deg, hsl(200 60% 94%), hsl(220 55% 92%))",
+  "linear-gradient(135deg, hsl(152 50% 94%), hsl(174 45% 92%))",
+  "linear-gradient(135deg, hsl(260 50% 95%), hsl(200 60% 93%))",
+  "linear-gradient(135deg, hsl(174 45% 93%), hsl(152 55% 91%))",
+  "linear-gradient(135deg, hsl(190 60% 93%), hsl(260 40% 94%))",
+];
+
+const neonShadows = [
+  "0 0 20px hsl(174 62% 50% / 0.15), 0 4px 20px hsl(174 62% 40% / 0.10)",
+  "0 0 20px hsl(200 60% 50% / 0.15), 0 4px 20px hsl(200 60% 40% / 0.10)",
+  "0 0 20px hsl(152 50% 50% / 0.15), 0 4px 20px hsl(152 50% 40% / 0.10)",
+  "0 0 20px hsl(260 50% 55% / 0.15), 0 4px 20px hsl(260 50% 45% / 0.10)",
+  "0 0 20px hsl(174 45% 50% / 0.15), 0 4px 20px hsl(174 45% 40% / 0.10)",
+  "0 0 20px hsl(190 60% 50% / 0.15), 0 4px 20px hsl(190 60% 40% / 0.10)",
+];
+
+const neonShadowsHover = [
+  "0 0 35px hsl(174 62% 50% / 0.35), 0 8px 30px hsl(174 62% 40% / 0.20)",
+  "0 0 35px hsl(200 60% 50% / 0.35), 0 8px 30px hsl(200 60% 40% / 0.20)",
+  "0 0 35px hsl(152 50% 50% / 0.35), 0 8px 30px hsl(152 50% 40% / 0.20)",
+  "0 0 35px hsl(260 50% 55% / 0.35), 0 8px 30px hsl(260 50% 45% / 0.20)",
+  "0 0 35px hsl(174 45% 50% / 0.35), 0 8px 30px hsl(174 45% 40% / 0.20)",
+  "0 0 35px hsl(190 60% 50% / 0.35), 0 8px 30px hsl(190 60% 40% / 0.20)",
+];
+
 const services = [
   {
     icon: HeartPulse,
