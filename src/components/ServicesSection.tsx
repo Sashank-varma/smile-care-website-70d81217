@@ -93,17 +93,16 @@ const ServicesSection = () => {
               whileInView="visible"
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
-              className="group rounded-2xl p-8 transition-all duration-300 bg-white border border-accent/60"
+              className="group rounded-2xl p-8 transition-all duration-300 border border-white/60"
               style={{
-                boxShadow: "0 4px 24px -4px hsl(174 62% 40% / 0.10), 0 1px 3px hsl(174 45% 50% / 0.06)",
+                background: neonGradients[i % neonGradients.length],
+                boxShadow: neonShadows[i % neonShadows.length],
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow =
-                  "0 12px 36px -8px hsl(174 62% 40% / 0.22), 0 2px 8px hsl(174 45% 50% / 0.10)";
+                (e.currentTarget as HTMLElement).style.boxShadow = neonShadowsHover[i % neonShadowsHover.length];
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow =
-                  "0 4px 24px -4px hsl(174 62% 40% / 0.10), 0 1px 3px hsl(174 45% 50% / 0.06)";
+                (e.currentTarget as HTMLElement).style.boxShadow = neonShadows[i % neonShadows.length];
               }}
             >
               <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
