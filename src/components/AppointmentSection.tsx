@@ -77,9 +77,9 @@ const AppointmentSection = () => {
             <h3 className="text-xl font-semibold text-foreground">Contact Details</h3>
             <div className="space-y-5">
               {[
-                { icon: Phone, label: "+1 (555) 123-4567" },
-                { icon: Mail, label: "hello@smilecare.com" },
-                { icon: MapPin, label: "123 Dental Ave, Suite 100, New York, NY" },
+                { icon: Phone, label: "7780453994" },
+                { icon: Mail, label: "projectd431@gmail.com" },
+                { icon: MapPin, label: "Vizinagaram" },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
