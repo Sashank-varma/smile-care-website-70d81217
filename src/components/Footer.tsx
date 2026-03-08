@@ -11,13 +11,13 @@ const Footer = () => (
       </div>
       <div className="space-y-3">
         <div className="flex items-center gap-3 text-sm opacity-80">
-          <Phone className="w-4 h-4" /> +1 (555) 123-4567
+          <Phone className="w-4 h-4" /> 7780453994
         </div>
         <div className="flex items-center gap-3 text-sm opacity-80">
-          <Mail className="w-4 h-4" /> hello@smilecare.com
+          <Mail className="w-4 h-4" /> projectd431@gmail.com
         </div>
         <div className="flex items-center gap-3 text-sm opacity-80">
-          <MapPin className="w-4 h-4" /> 123 Dental Ave, Suite 100, NY
+          <MapPin className="w-4 h-4" /> Vizinagaram
         </div>
       </div>
       <div>
