@@ -45,7 +45,6 @@ const AppointmentSection = () => {
       setShowSuccess(true);
       setForm({ name: "", email: "", phone: "" });
     } catch {
-      // still show success since webhook may not return cors headers
       setShowSuccess(true);
       setForm({ name: "", email: "", phone: "" });
     } finally {
@@ -54,19 +53,28 @@ const AppointmentSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-secondary/40">
-      <div className="container mx-auto px-4 lg:px-8">
-        <motion.h2
+    <section id="contact" className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(180deg, hsl(200 40% 96%) 0%, hsl(210 30% 98%) 100%)" }}>
+      {/* Decorative blobs */}
+      <div className="blob w-[350px] h-[350px] -bottom-20 -left-20" style={{ background: "hsl(174 80% 52% / 0.12)" }} />
+      <div className="blob w-[250px] h-[250px] top-10 right-10" style={{ background: "hsl(215 75% 55% / 0.1)" }} />
+
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl sm:text-4xl font-bold text-center text-foreground"
+          className="text-center"
         >
-          Book Your Appointment
-        </motion.h2>
-        <p className="mt-3 text-center text-muted-foreground max-w-md mx-auto">
-          Reach us directly or use the form and we'll get back to you.
-        </p>
+          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-accent text-accent-foreground mb-4">
+            Get In Touch
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+            Book Your Appointment
+          </h2>
+          <p className="mt-3 text-muted-foreground max-w-md mx-auto">
+            Reach us directly or use the form and we'll get back to you.
+          </p>
+        </motion.div>
 
         <div className="mt-16 grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact info */}
@@ -80,16 +88,24 @@ const AppointmentSection = () => {
             <h3 className="text-xl font-semibold text-foreground">Contact Details</h3>
             <div className="space-y-5">
               {[
-                { icon: Phone, label: "7780453994" },
-                { icon: Mail, label: "projectd431@gmail.com" },
-                { icon: MapPin, label: "Vizinagaram" },
-              ].map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-primary" />
+                { icon: Phone, label: "7780453994", gradient: "linear-gradient(135deg, hsl(174 72% 42%), hsl(190 85% 48%))" },
+                { icon: Mail, label: "projectd431@gmail.com", gradient: "linear-gradient(135deg, hsl(215 75% 55%), hsl(240 55% 62%))" },
+                { icon: MapPin, label: "Vizinagaram", gradient: "linear-gradient(135deg, hsl(155 65% 42%), hsl(174 72% 42%))" },
+              ].map(({ icon: Icon, label, gradient }) => (
+                <motion.div
+                  key={label}
+                  className="flex items-center gap-4 glass-card rounded-xl p-4"
+                  whileHover={{ x: 6 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div
+                    className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{ background: gradient }}
+                  >
+                    <Icon className="w-5 h-5 text-white" />
                   </div>
-                  <span className="text-muted-foreground text-sm">{label}</span>
-                </div>
+                  <span className="text-foreground text-sm font-medium">{label}</span>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -101,10 +117,10 @@ const AppointmentSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-card rounded-2xl p-8 space-y-5"
+            className="glass-card rounded-2xl p-8 space-y-5"
             style={{ boxShadow: "var(--card-shadow)" }}
           >
-            <p className="text-sm font-semibold bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
+            <p className="text-sm font-semibold bg-gradient-to-r from-foreground via-primary to-[hsl(190,85%,48%)] bg-clip-text text-transparent">
               Fill the form & you'll get a call from our AI assistant 🤖
             </p>
             <div>
@@ -112,7 +128,7 @@ const AppointmentSection = () => {
                 placeholder="Full Name"
                 value={form.name}
                 onChange={(e) => handleChange("name", e.target.value)}
-                className="rounded-xl"
+                className="rounded-xl bg-background/60"
               />
               {errors.name && <p className="text-destructive text-xs mt-1">{errors.name}</p>}
             </div>
@@ -122,7 +138,7 @@ const AppointmentSection = () => {
                 type="email"
                 value={form.email}
                 onChange={(e) => handleChange("email", e.target.value)}
-                className="rounded-xl"
+                className="rounded-xl bg-background/60"
               />
               {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}
             </div>
@@ -132,7 +148,7 @@ const AppointmentSection = () => {
                 type="tel"
                 value={form.phone}
                 onChange={(e) => handleChange("phone", e.target.value)}
-                className="rounded-xl"
+                className="rounded-xl bg-background/60"
               />
               {errors.phone && <p className="text-destructive text-xs mt-1">{errors.phone}</p>}
             </div>
@@ -159,11 +175,14 @@ const AppointmentSection = () => {
               exit={{ opacity: 0, scale: 0.85 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-card rounded-2xl p-8 max-w-md w-full text-center space-y-4"
-              style={{ boxShadow: "var(--card-shadow-hover)" }}
+              className="glass-card rounded-2xl p-8 max-w-md w-full text-center space-y-4"
+              style={{ boxShadow: "var(--glow-primary)" }}
             >
-              <div className="mx-auto w-16 h-16 rounded-full bg-accent flex items-center justify-center">
-                <CheckCircle2 className="w-8 h-8 text-primary" />
+              <div
+                className="mx-auto w-16 h-16 rounded-full flex items-center justify-center"
+                style={{ background: "linear-gradient(135deg, hsl(174 72% 42%), hsl(155 65% 42%))" }}
+              >
+                <CheckCircle2 className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-foreground">
                 Appointment Request Received!
