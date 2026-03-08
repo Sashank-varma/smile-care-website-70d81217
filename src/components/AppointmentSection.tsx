@@ -104,6 +104,9 @@ const AppointmentSection = () => {
             className="bg-card rounded-2xl p-8 space-y-5"
             style={{ boxShadow: "var(--card-shadow)" }}
           >
+            <p className="text-sm font-semibold bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
+              Fill the form & you'll get a call from our AI assistant 🤖
+            </p>
             <div>
               <Input
                 placeholder="Full Name"
