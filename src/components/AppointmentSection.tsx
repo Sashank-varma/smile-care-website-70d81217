@@ -104,7 +104,10 @@ const AppointmentSection = () => {
                   >
                     <Icon className="w-5 h-5 text-white" />
                   </div>
-                  <span className="text-foreground text-sm font-medium">{label}</span>
+                  <div>
+                    <p className="text-xs text-muted-foreground">{title}</p>
+                    <span className="text-foreground text-sm font-medium">{label}</span>
+                  </div>
                 </motion.div>
               ))}
             </div>
