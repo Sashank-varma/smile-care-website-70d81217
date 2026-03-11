@@ -102,13 +102,13 @@ const BeforeAfterSection = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-accent text-accent-foreground mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-4" style={{ background: "hsl(174 72% 38% / 0.2)", color: "hsl(174 80% 65%)" }}>
             Real Results
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">
             Before & After
           </h2>
-          <p className="mt-3 text-muted-foreground max-w-lg mx-auto">
+          <p className="mt-3 max-w-lg mx-auto" style={{ color: "hsl(210 15% 70%)" }}>
             Drag the slider to see the transformation — real cases, real smiles
           </p>
         </motion.div>
