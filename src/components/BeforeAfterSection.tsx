@@ -113,7 +113,7 @@ const BeforeAfterSection = () => {
           </p>
         </motion.div>
 
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {cases.map((c, i) => (
             <motion.div
               key={c.title}
