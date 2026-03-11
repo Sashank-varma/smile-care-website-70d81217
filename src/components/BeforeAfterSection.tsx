@@ -91,8 +91,9 @@ const CompareSlider = ({ before, after }: { before: string; after: string }) => 
 
 const BeforeAfterSection = () => {
   return (
-    <section className="py-24 relative overflow-hidden" style={{ background: "var(--section-gradient)" }}>
-      <div className="blob w-[350px] h-[350px] top-20 -left-32" style={{ background: "hsl(215 75% 55% / 0.1)" }} />
+    <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(220 40% 8%) 0%, hsl(200 50% 12%) 30%, hsl(174 45% 14%) 60%, hsl(230 35% 10%) 100%)" }}>
+      <div className="blob w-[400px] h-[400px] top-10 -left-32" style={{ background: "hsl(174 80% 52% / 0.12)" }} />
+      <div className="blob w-[300px] h-[300px] bottom-10 right-[-80px]" style={{ background: "hsl(215 75% 55% / 0.10)" }} />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <motion.div
