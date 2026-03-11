@@ -8,11 +8,14 @@ import before2 from "@/assets/before-2.jpg";
 import after2 from "@/assets/after-2.jpg";
 import before3 from "@/assets/before-3.jpg";
 import after3 from "@/assets/after-3.jpg";
+import before4 from "@/assets/before-4.jpg";
+import after4 from "@/assets/after-4.jpg";
 
 const cases = [
   { before: before1, after: after1, title: "Teeth Whitening", description: "Professional whitening restored a bright, confident smile." },
   { before: before2, after: after2, title: "Braces Treatment", description: "Orthodontic alignment for a perfectly straight smile." },
   { before: before3, after: after3, title: "Dental Restoration", description: "Veneer restoration repaired and enhanced the natural look." },
+  { before: before4, after: after4, title: "Dental Implants", description: "Seamless implant placement for a complete, natural-looking smile." },
 ];
 
 const CompareSlider = ({ before, after }: { before: string; after: string }) => {
