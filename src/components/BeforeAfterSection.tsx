@@ -125,8 +125,8 @@ const BeforeAfterSection = () => {
             >
               <CompareSlider before={c.before} after={c.after} />
               <div className="text-center">
-                <h3 className="font-semibold text-foreground">{c.title}</h3>
-                <p className="text-sm text-muted-foreground mt-1">{c.description}</p>
+                <h3 className="font-semibold text-white">{c.title}</h3>
+                <p className="text-sm mt-1" style={{ color: "hsl(210 15% 60%)" }}>{c.description}</p>
               </div>
             </motion.div>
           ))}
