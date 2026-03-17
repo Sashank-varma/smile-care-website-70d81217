@@ -11,7 +11,7 @@ const formSchema = z.object({
   phone: z.string().trim().min(7, "Phone is required").max(20),
 });
 
-const WEBHOOK_URL = "https://finalpro1.app.n8n.cloud/webhook-test/ad7b26c0-33fb-4968-bc2c-63068d0a4600";
+const WEBHOOK_URL = "https://finalpro1.app.n8n.cloud/webhook/ad7b26c0-33fb-4968-bc2c-63068d0a4600";
 
 const AppointmentSection = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "" });
